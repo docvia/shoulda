@@ -1,3 +1,11 @@
+= NOTICE
+
+*** This is version 2.11.3 of shoulda with the deprecation warnings removed. ***
+
+There are no changes to functionality and, barring any serious bugs, I will not
+update this gem. It is simply way to use the last version of shoulda before
+it switched to rspec style matchers.
+
 = Shoulda - Making tests easy on the fingers and eyes
 
 Shoulda makes it easy to write elegant, understandable, and maintainable tests. Shoulda consists of matchers, test helpers, and assertions. It's fully compatible with your existing tests in Test::Unit or RSpec, and requires no retooling to use.
