@@ -52,7 +52,6 @@ module Shoulda # :nodoc:
     #     end
     #   end
     def should_change(description, options = {}, &block)
-      ::ActiveSupport::Deprecation.warn("Not considered a useful test. Instead, test the end state explicitly.")
       by, from, to = get_options!([options], :by, :from, :to)
       stmt = "change #{description}"
       stmt << " from #{from.inspect}" if from
@@ -100,7 +99,6 @@ module Shoulda # :nodoc:
     #     end
     #   end
     def should_not_change(description, &block)
-      ::ActiveSupport::Deprecation.warn("Not considered a useful test. Instead, test the end state explicitly.")
       before = lambda { @_before_should_not_change = block.bind(self).call }
       should "not change #{description}", :before => before do
         new_value = block.bind(self).call
@@ -120,7 +118,6 @@ module Shoulda # :nodoc:
     #     should_create :post
     #   end
     def should_create(class_name)
-      ::ActiveSupport::Deprecation.warn
       should_change_record_count_of(class_name, 1, 'create')
     end
 
@@ -136,7 +133,6 @@ module Shoulda # :nodoc:
     #     should_destroy :post
     #   end
     def should_destroy(class_name)
-      ::ActiveSupport::Deprecation.warn
       should_change_record_count_of(class_name, -1, 'destroy')
     end
 
