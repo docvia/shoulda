@@ -89,7 +89,7 @@ module Shoulda # :nodoc:
           if flash.blank?
             "no flash was set"
           else
-            "was #{flash.inspect}"
+            "was #{flash.to_hash.inspect}"
           end
         end
 
